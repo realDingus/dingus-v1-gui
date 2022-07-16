@@ -1,0 +1,51 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("dingus gui v1 | real dingus#6354", "Ocean")
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+
+    MainSection:NewButton("Back/Front Flip", "Makes you do gymnastics", function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/7wDcPtLk'))()
+    end)
+
+    MainSection:NewToggle("Super-Human", "makes you go fast and jump high", function(state)
+        if state then
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+        else
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        end
+    end)
+
+    MainSection:NewButton("infinite yield", "FE fake admin", function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/KQjPgjeX'))()
+    end)
+
+--LOCAL PLAYER
+local Player = Window:NewTab("local player")
+local PlayerSection = Player:NewSection("Player")
+
+PlayerSection:NewSlider("Walking speed", "Speed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewSlider("JumpPower", "jump high", 350, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+PlayerSection:NewButton("set all default", "makes ur walkSpeed and jumpPower to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+
+--Other
+local Other = Window:NewTab("Other")
+local OtherSection = Other:NewSection("other")
+OtherSection:NewLabel("members in biggest floppa vault is W")
+
+OtherSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI(z)
+end)
